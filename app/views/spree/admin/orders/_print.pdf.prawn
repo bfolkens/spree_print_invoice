@@ -1,7 +1,7 @@
 require 'prawn/layout'
 
 font "Helvetica"
-im = "#{Rails.root}/#{Spree::Config[:print_invoice_logo_path]}"
+im = "#{Rails.root.to_s}/public/assets/#{Spree::PrintInvoice::Config[:print_invoice_logo_path]}"
 
 Rails.logger.warn Spree::Config[:print_invoice_logo_scale].inspect
 image im, :at => [0,720], :scale => (Spree::Config[:print_invoice_logo_scale].to_f || 0.35)
